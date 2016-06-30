@@ -1,5 +1,5 @@
 {
-  "name": "vvinhas-react-series",
+  "name": "gkal19-react-series",
   "version": "0.0.0",
   "description": "Provides a basic structure to follow the v++ channel React series.",
   "main": "src/app.js",
@@ -18,6 +18,6 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --history-api-fallback --content-base public"
   },
-  "author": "Vinicius Vinhas",
+  "author": "Gabriel Kalani",
   "license": "MIT"
 }
