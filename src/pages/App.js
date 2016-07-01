@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class App extends React.Component {
   constructor() {
@@ -10,9 +11,9 @@ export default class App extends React.Component {
       <div>
         <nav className="nav is-tab has-shadow">
         <div className="nav-left">
-          <a href="#" className="nav-item">Home</a>
-          <a href="#" className="nav-item">Cursos</a>
-          <a href="#" className="nav-item">Sobre</a>
+          <Link to="#" className="nav-item" activeClassName="is-active">Home</Link>
+          <Link to="/cursos" className="nav-item" activeClassName="is-active">Cursos</Link>
+          <Link to="/sobre" className="nav-item" activeClassName="is-active">Sobre</Link>
         </div>
         </nav>
 
