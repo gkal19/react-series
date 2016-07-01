@@ -22,27 +22,53 @@ export default class PlacarContainer extends React.Component {
 		});
 	}
 	render() {
+		const { partida, casa, visitante } = this.props;
+		const estilo = {float: "left", "marginRight": "20px"};
+
 		return (
 			<div>
-				<div style={{float: "left", "marginRight": "20px"}}>
+				<div style={estilo}>
 					<h3>Casa</h3>
-					<Time nome={this.props.casa.nome}
+					<Time nome={casa.nome}
 						  gols={this.state.gols_casa}
 						  marcarGol={this.marcarGolCasa.bind(this)} />
 				</div>
-				<div style={{float: "left", "marginRight": "20px"}}>
-					<Partida estadio={this.props.partida.estadio}
-							 data={this.props.partida.data}
-							 horario={this.props.partida.horario} />
+				<div style={estilo}>
+					<Partida {...partida} />
 				</div>
-				<div style={{float: "left", "marginRight": "20px"}}>
+				<div style={estilo}>
 					<h3>Visitante</h3>
-					<Time nome={this.props.visitante.nome}
+					<Time nome={visitante.nome}
 						  gols={this.state.gols_visitante}
 						  marcarGol={this.marcarGolVisitante.bind(this)} />
 				</div>
+				<div>{this.props.clima}</div>
 				<div style={{clear: "both"}}></div>
 			</div>
 		);
 	}
 }
+
+PlacarContainer.propTypes = {
+	clima: React.PropTypes.string,
+	tempo: React.PropTypes.number.isRequired
+};
+
+PlacarContainer.defaultProps = {
+	clima: 'Chuvoso'
+}
+
+// React.PropTypes.any
+// React.PropTypes.array
+// React.PropTypes.bool
+// React.PropTypes.func
+// React.PropTypes.number
+// React.PropTypes.object
+// React.PropTypes.string
+// React.PropTypes.instanceOf(Partida)
+// React.PropTypes.oneOf(['Vasco', 'Flamengo'])
+// React.PropTypes.oneOfType([Time, Partida])
+// React.PropTypes.arrayOf(React.PropTypes.string)
+// React.PropTypes.share({
+//     nome: React.PropTypes.string
+// })
