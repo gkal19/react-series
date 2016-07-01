@@ -7,7 +7,21 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <h1>Router e seus componentes</h1>
+      <div>
+        <nav className="nav is-tab has-shadow">
+        <div className="nav-left">
+          <a href="#" className="nav-item">Home</a>
+          <a href="#" className="nav-item">Cursos</a>
+          <a href="#" className="nav-item">Sobre</a>
+        </div>
+        </nav>
+
+        <section className="section">
+        <div className="container">
+      {this.props.children}
+        </div>
+      </section>
+      </div>
     );
   }
 }
